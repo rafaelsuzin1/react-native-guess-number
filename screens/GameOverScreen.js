@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const GameOverScreen = ({}) => {
    return (
        <View style={styles.screen}>
-           <Text>The Game's over</Text>
+           <Text>The Game Is Over</Text>
        </View>
    )
 }
