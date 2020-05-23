@@ -11,6 +11,7 @@ import CardView from '../components/CardView'
 import Colors from '../constants/colors'
 import Input from '../components/Input'
 import NumberContainer from '../components/NumberContainer'
+import BodyText from '../components/BodyText'
 
 const StartGameScreen = ({onStartGame}) => {
 
@@ -64,7 +65,7 @@ const StartGameScreen = ({onStartGame}) => {
             <View style={styles.screen}>
                 <Text style={styles.title}>Start a New Game!</Text>
                 <CardView style={styles.inputContainer}>
-                    <Text>Select a Number</Text>
+                    <BodyText>Select a Number</BodyText>
                     <Input
                         value={enteredNumber}
                         onChangeText={onChangeTextHandler}
@@ -77,8 +78,8 @@ const StartGameScreen = ({onStartGame}) => {
                         autoCorrect={false}
                     />
                     <View style={styles.buttonContainer}>
-                        <Button title='Reset' buttonStyle={styles.buttonReset} onPress={resetInputHandler} />
-                        <Button title='Confirm' buttonStyle={styles.button} onPress={confirmInputHandler} />
+                        <Button iconName='' title='Reset' buttonStyle={styles.buttonReset} onPress={resetInputHandler} />
+                        <Button iconName='md-play' title='Confirm' buttonStyle={styles.buttonConfirm} onPress={confirmInputHandler} />
                     </View>
                 </CardView>
                 {confirmedOutput}
@@ -97,7 +98,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        marginVertical: 10
+        marginVertical: 10,
+        fontFamily: 'open-sans-bold'
     },
     inputContainer: {
         alignItems: 'center',
@@ -113,8 +115,8 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
     },
-    button: {
-        backgroundColor: Colors.colorPrimary
+    buttonConfirm: {
+        backgroundColor: Colors.colorButtonConfirm
     },
     buttonReset: {
         backgroundColor: Colors.colorAccent
