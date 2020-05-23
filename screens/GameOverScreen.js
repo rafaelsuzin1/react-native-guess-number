@@ -4,19 +4,20 @@ import Button from '../components/Button'
 import BodyText from '../components/BodyText'
 import TitleText from '../components/TitleText'
 import Colors from '../constants/colors'
+import CardView from '../components/CardView'
 
 const GameOverScreen = ({ roundsNumber, userNumber, onRestartGame }) => {
     return (
         <View style={styles.screen}>
             <TitleText>The Game Is Over</TitleText>
-            <View style={styles.imageContainer}>
+            <CardView style={styles.imageContainer}>
                 <Image
                     style={styles.image}
                     resizeMode='cover'
                     source={require('../assets/success.png')}
                 //source={{uri: 'https://cdn.pixabay.com/photo/2016/05/05/23/52/mountain-summit-1375015_960_720.jpg'}} 
                 />
-            </View>
+            </CardView>
             <View style={styles.resultContainer}>
                 <BodyText style={styles.resultText}>
                     You phone needed{' '}
@@ -45,10 +46,12 @@ const styles = StyleSheet.create({
     imageContainer: {
         borderRadius: 200,
         borderColor: 'black',
+        marginTop:10,
         width: 300,
         height: 300,
-        borderWidth: 3,
-        overflow: 'hidden'
+        padding:0,
+        overflow: 'hidden',
+        elevation:10
     },
     resultText: {
         textAlign: 'center',
